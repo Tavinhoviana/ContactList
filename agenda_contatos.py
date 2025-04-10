@@ -1,126 +1,126 @@
-def adicionar_novo_contato(contatos, nome_contato, novo_telefone, novo_email):
-    contato = {
-        "contato": nome_contato,
-        "telefone": novo_telefone,
-        "email": novo_email,
-        "adicionado": False
+def add_new_contact(contacts, contact_name, new_phone, new_email):
+    contact = {
+        "contact": contact_name,
+        "phone": new_phone,
+        "email": new_email,
+        "added": False
     }
-    contatos.append(contato)
-    print(f"Contato {nome_contato} foi adicionado com sucesso!")
+    contacts.append(contact)
+    print(f"Contact {contact_name} was successfully added!")
 
-def ver_contatos(contatos):
-    if not contatos:
-        print("\nLista de contatos está vazia.")
+def view_contacts(contacts):
+    if not contacts:
+        print("\nThe contact list is empty.")
         return
     
-    print("\nLista de contatos:")
-    for indice, contato in enumerate(contatos, start=1):
-        status = "✓" if contato["adicionado"] else " "
-        nome = contato["contato"]
-        telefone = contato["telefone"]
-        email = contato["email"]
-        print(f"{indice}. [{status}] {nome}, {telefone}, {email}")
+    print("\nContact list:")
+    for index, contact in enumerate(contacts, start=1):
+        status = "✓" if contact["added"] else " "
+        name = contact["contact"]
+        phone = contact["phone"]
+        email = contact["email"]
+        print(f"{index}. [{status}] {name}, {phone}, {email}")
         
-def atualizar_contato(contatos, indice_contato, novo_nome, novo_telefone, novo_email):
-    indice_contato_ajustado = int(indice_contato) - 1
-    if 0 <= indice_contato_ajustado < len(contatos):
-        contatos[indice_contato_ajustado]["contato"] = novo_nome
-        contatos[indice_contato_ajustado]["telefone"] = novo_telefone
-        contatos[indice_contato_ajustado]["email"] = novo_email
-        print(f"Contato {indice_contato} atualizado para {novo_nome}.")
+def update_contact(contacts, contact_index, new_name, new_phone, new_email):
+    adjusted_contact_index = int(contact_index) - 1
+    if 0 <= adjusted_contact_index < len(contacts):
+        contacts[adjusted_contact_index]["contact"] = new_name
+        contacts[adjusted_contact_index]["phone"] = new_phone
+        contacts[adjusted_contact_index]["email"] = new_email
+        print(f"Contact {contact_index} updated to {new_name}.")
     else:
-        print("Índice de contato inválido.")
+        print("Invalid contact index.")
 
-def favoritar_contato(contatos, indice_contato):
-    indice_contato_ajustado = int(indice_contato) - 1
-    if 0 <= indice_contato_ajustado < len(contatos):
-        contatos[indice_contato_ajustado]["adicionado"] = True
-        print(f"Contato {indice_contato} marcado como favorito.")
+def favorite_contact(contacts, contact_index):
+    adjusted_contact_index = int(contact_index) - 1
+    if 0 <= adjusted_contact_index < len(contacts):
+        contacts[adjusted_contact_index]["added"] = True
+        print(f"Contact {contact_index} marked as favorite.")
     else:
-        print("Índice inválido.")
+        print("Invalid index.")
 
-def desfavoritar_contato(contatos, indice_contato):
-    for contato in contatos:
-        if contato.get("contato") == indice_contato and contato["adicionado"]:
-            contato["adicionado"] = False
-            print(f"O contato '{indice_contato}' foi desmarcado como favorito.")   
-    print(f"Contato '{indice_contato}' não encontrado ou já não estava favoritado.")
+def unfavorite_contact(contacts, contact_index):
+    for contact in contacts:
+        if contact.get("contact") == contact_index and contact["added"]:
+            contact["added"] = False
+            print(f"The contact '{contact_index}' was unfavorited.")   
+    print(f"Contact '{contact_index}' not found or was already not favorited.")
     return
 
-def ver_favoritos(contatos):
-    favoritos = [c for c in contatos if c["adicionado"]]
-    if not favoritos:
-        print("\nNenhum contato favoritado.")
+def view_favorites(contacts):
+    favorites = [c for c in contacts if c["added"]]
+    if not favorites:
+        print("\nNo favorite contacts.")
         return
     
-    print("\nLista de contatos favoritos:")
-    for indice, contato in enumerate(favoritos, start=1):
-        nome = contato["contato"]
-        telefone = contato["telefone"]
-        email = contato["email"]
-        print(f"{indice}. {nome}, {telefone}, {email}")
+    print("\nFavorite contacts list:")
+    for index, contact in enumerate(favorites, start=1):
+        name = contact["contact"]
+        phone = contact["phone"]
+        email = contact["email"]
+        print(f"{index}. {name}, {phone}, {email}")
 
-def deletar_contato(contatos, indice_contato):
-    indice_contato_ajustado = int(indice_contato) - 1
-    if 0 <= indice_contato_ajustado < len(contatos):
-        contato_removido = contatos.pop(indice_contato_ajustado)
-        print(f"Contato {contato_removido['contato']} foi removido.")
+def delete_contact(contacts, contact_index):
+    adjusted_contact_index = int(contact_index) - 1
+    if 0 <= adjusted_contact_index < len(contacts):
+        removed_contact = contacts.pop(adjusted_contact_index)
+        print(f"Contact {removed_contact['contact']} was removed.")
     else:
-        print("Índice de contato inválido.")
+        print("Invalid contact index.")
 
-# Lista de contatos
-contatos = []
+# List of contacts
+contacts = []
 
 while True:
-    print("\nLista de contatos:")
-    print("1. Adicionar novo contato")
-    print("2. Ver contatos")
-    print("3. Editar contato")
-    print("4. Marcar contato como favorito")
-    print("5. Desmarcar como favorito")
-    print("6. Ver somente contatos favoritos")
-    print("7. Deletar contato")
-    print("8. Sair")
+    print("\nContact list:")
+    print("1. Add new contact")
+    print("2. View contacts")
+    print("3. Edit contact")
+    print("4. Mark contact as favorite")
+    print("5. Unmark as favorite")
+    print("6. View only favorite contacts")
+    print("7. Delete contact")
+    print("8. Exit")
 
-    escolha = input("Digite a sua escolha: ")
+    choice = input("Enter your choice: ")
 
-    if escolha == "1":
-        nome_contato = input("Digite o nome: ")
-        novo_telefone = input("Digite o telefone: ")
-        novo_email = input("Digite o email: ")
-        adicionar_novo_contato(contatos, nome_contato, novo_telefone, novo_email)
+    if choice == "1":
+        contact_name = input("Enter the name: ")
+        new_phone = input("Enter the phone number: ")
+        new_email = input("Enter the email: ")
+        add_new_contact(contacts, contact_name, new_phone, new_email)
 
-    elif escolha == "2":
-        ver_contatos(contatos)
+    elif choice == "2":
+        view_contacts(contacts)
 
-    elif escolha == "3":
-        ver_contatos(contatos)
-        indice_contato = input("Digite o número do contato que deseja atualizar: ")
-        novo_nome = input("Digite o novo nome do contato: ")
-        novo_telefone = input("Digite o novo telefone do contato: ")
-        novo_email = input("Digite o novo email do contato: ")
-        atualizar_contato(contatos, indice_contato, novo_nome, novo_telefone, novo_email)
+    elif choice == "3":
+        view_contacts(contacts)
+        contact_index = input("Enter the number of the contact you want to update: ")
+        new_name = input("Enter the new name of the contact: ")
+        new_phone = input("Enter the new phone number of the contact: ")
+        new_email = input("Enter the new email of the contact: ")
+        update_contact(contacts, contact_index, new_name, new_phone, new_email)
 
-    elif escolha == "4":
-        ver_contatos(contatos)
-        indice_contato = input("Digite o número do contato que deseja favoritar: ")
-        favoritar_contato(contatos, indice_contato)
+    elif choice == "4":
+        view_contacts(contacts)
+        contact_index = input("Enter the number of the contact you want to favorite: ")
+        favorite_contact(contacts, contact_index)
 
-    elif escolha == "5":
-        indice_contato = input("Digite o nome do contato que deseja desfavoritar: ")
-        desfavoritar_contato(contatos, indice_contato)
+    elif choice == "5":
+        contact_index = input("Enter the name of the contact you want to unfavorite: ")
+        unfavorite_contact(contacts, contact_index)
 
-    elif escolha == "6":
-        ver_favoritos(contatos)
+    elif choice == "6":
+        view_favorites(contacts)
 
-    elif escolha == "7":
-        ver_contatos(contatos)
-        indice_contato = input("Digite o número do contato que deseja excluir: ")
-        deletar_contato(contatos, indice_contato)
+    elif choice == "7":
+        view_contacts(contacts)
+        contact_index = input("Enter the number of the contact you want to delete: ")
+        delete_contact(contacts, contact_index)
 
-    elif escolha == "8":
-        print("Programa finalizado.")
+    elif choice == "8":
+        print("Program ended.")
         break
 
     else:
-        print("Opção inválida. Tente novamente.")
+        print("Invalid option. Please try again.")
