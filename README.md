@@ -1,14 +1,14 @@
 <h1 align="center"> Contact list </h1>
 
 <p align="center">
-Curso exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB.
+Exclusive course, promoted by Rocketseat for teaching web technologies.
 </p>
 
 <p align="center">
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-layout">Layout</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#memo-licença">Licença</a>
+  <a href="#memo-licença">License</a>
 </p>
 
 <p align="center">
@@ -19,24 +19,22 @@ Curso exclusivo, promovido pela Rocketseat para ensino de tecnologias WEB.
 
 ![ContactList](./assets/Design%20sem%20nome.jpg)
 
-## 🚀 Tecnologias
+## 🚀 Technologies
 
-Esse projeto foi desenvolvido com as seguintes tecnologias:
+This project was developed with the following technologies:
 
 - Python
 - Git & Github
 
-## 💻 Projeto
+## 💻 Project
 
-A Lista de contato é um projeto onde permite o usuário manipular diferentes funçoes no contato como:
-Adicionar, ver, editar, favoritar e desfavoritar, ver somente favoritos e deletar
+The Contact List is a project that allows the user to perform different actions on the contact, such as: Add, view, edit, favorite and unfavorite, view only favorites, and delete.
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://github.com/Tavinhoviana/ContactList).
+You can view the project layout through [THIS LINK](https://github.com/Tavinhoviana/ContactList).
 
-## :memo: Licença
+## :memo: License
 
-Esse projeto está sob a licença MIT.
-
+This project is under the MIT license.
 ---
